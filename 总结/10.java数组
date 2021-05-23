@@ -1,0 +1,16 @@
+1.Java 语言中提供的数组是用来存储固定大小的同类型元素。
+
+2.创建数组的两种方式:
+int[] demo01 = new int[3];
+demo01[0] = 1;
+demo01[1] = 2;
+demo01[2] = 3;
+System.out.println(demo01.length);
+int[] demo02 = {3,2,1};
+System.out.println(demo02.length);
+
+3.forEach循环遍历数组：
+int[] num = {1,2,3};
+for (int i : num) {
+    System.out.println(i);
+}

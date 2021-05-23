@@ -1,0 +1,26 @@
+1.一个字符串其实就是一个简单的正则表达式，例如 Hello World 正则表达式匹配 "Hello World" 字符串。
+.（点号）也是一个正则表达式，它匹配任何一个字符如："a" 或 "1"。
+
+2.this\s+is\s+text
+注意字符串中的 \s+。
+匹配单词 "this" 后面的 \s+ 可以匹配多个空格，之后匹配 is 字符串，再之后 \s+ 匹配多个空格然后再跟上 text 字符串。
+可以匹配这个实例：this is text
+
+3.^\d+(\.\d+)?
+^ 定义了以什么开始
+\d+ 匹配一个或多个数字
+? 设置括号内的选项是可选的
+\. 匹配 "."
+可以匹配的实例："5", "1.5" 和 "2.21"。
+
+4.正则简单使用
+import java.util.regex.Pattern;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		String content = "I am jack from runoob.com";
+		String patternString = ".*runoob.*";
+		boolean isMatch = Pattern.matches(patternString, content);
+		System.out.println("字符串中是否包含子字符串:" + isMatch);
+	}
+}

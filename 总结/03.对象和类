@@ -1,0 +1,36 @@
+1.实例化类，调用类中的方法和属性。
+public class HelloWorld {
+    int num;
+    public HelloWorld(String name) {  //构造器，前面不要加void
+        System.out.println(name);
+    }
+    public void setNum(int n) {
+        num = n;
+    }
+    public int getNum() {
+        return num;
+    }
+    public static void main(String[] args) {
+        HelloWorld h = new HelloWorld("jack");
+        h.setNum(10);
+        System.out.println(h.getNum());
+    }
+}
+
+2.源文件声明规则：
+一个源文件中只能有一个 public 类
+一个源文件可以有多个非 public 类
+源文件的名称应该和 public 类的类名保持一致。例如：源文件中 public 类的类名是 Employee，那么源文件应该命名为Employee.java。
+如果一个类定义在某个包中，那么 package 语句应该在源文件的首行。
+如果源文件包含 import 语句，那么应该放在 package 语句和类定义之间。如果没有 package 语句，那么 import 语句应该在源文件中最前面。
+import 语句和 package 语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。
+
+3.java包
+包主要用来对类和接口进行分类。当开发 Java 程序时，可能编写成百上千的类，因此很有必要对类和接口进行分类。
+
+4.import 语句
+在 Java 中，如果给出一个完整的限定名，包括包名、类名，那么 Java 编译器就可以很容易地定位到源代码或者类。import 语句就是用来
+提供一个合理的路径，使得编译器可以找到某个类。
+例如，下面的命令行将会命令编译器载入 java_installation/java/io 路径下的所有类
+import java.io.*;
+

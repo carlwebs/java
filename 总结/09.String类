@@ -1,0 +1,27 @@
+1.字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 
+类来创建和操作字符串。
+
+2.String str=String.format("Hi,%s:%s.%s", "王南","王力","王张");     
+System.out.println(str); //Hi,王南:王力.王张
+
+3.String类是不可改变的解析：
+例如：
+String s = "Google";
+System.out.println("s = " + s);
+
+s = "Runoob";
+System.out.println("s = " + s);
+输出结果为：
+Google
+Runoob
+从结果上看是改变了，但为什么门说String对象是不可变的呢？
+
+原因在于实例中的 s 只是一个 String 对象的引用，并不是对象本身，当执行 s = "Runoob"; 创建
+了一个新的对象 "Runoob"，而原来的 "Google" 还存在于内存中。
+
+4.当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。
+和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。
+StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程
+安全的（不能同步访问）。
+由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在应用
+程序要求线程安全的情况下，则必须使用 StringBuffer 类。

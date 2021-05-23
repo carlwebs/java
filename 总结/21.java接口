@@ -1,0 +1,80 @@
+1.接口与类的区别：
+接口不能用于实例化对象。
+接口没有构造方法。
+接口中所有的方法必须是抽象方法。
+接口不能包含成员变量，除了 static 和 final 变量。
+接口不是被类继承了，而是要被类实现。
+接口支持多继承。
+
+2.接口特性：
+接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 public abstract（只能是 public abstract，其
+他修饰符都会报错）。
+接口中可以含有变量，但是接口中的变量会被隐式的指定为 public static final 变量（并且只能是 public，用 
+private 修饰会报编译错误）。
+接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法。
+
+3.接口语法格式：
+[可见度] interface 接口名称 [extends 其他的接口名] {
+        // 声明变量
+        // 抽象方法
+}
+例子：
+/* 文件名 : NameOfInterface.java */
+import java.lang.*;
+//引入包
+ 
+public interface NameOfInterface
+{
+   //任何类型 final, static 字段
+   //抽象方法
+}
+
+4.接口有以下特性：
+接口是隐式抽象的，当声明一个接口的时候，不必使用abstract关键字。
+接口中每一个方法也是隐式抽象的，声明时同样不需要abstract关键字。
+接口中的方法都是公有的。
+
+5.接口的实现
+当类实现接口的时候，类要实现接口中所有的方法。否则，类必须声明为抽象的类。
+类使用implements关键字实现接口。在类声明中，Implements关键字放在class声明后面。
+实现接口的语法：
+...implements 接口名称[, 其他接口名称, 其他接口名称..., ...] ...
+
+6.接口例子：
+InterfaceTest.java 
+package java01;
+public interface InterfaceTest {
+	public void eat();
+	public void play();
+}
+HelloWorld.java
+package java01;
+public class HelloWorld implements InterfaceTest {
+   public static void main(String args[]){
+	   HelloWorld h1 = new HelloWorld();
+	   h1.eat();
+	   h1.play();
+   }
+	@Override
+	public void eat() {
+		System.out.println("eat");
+	}
+	
+	@Override
+	public void play() {
+		System.out.println("play");
+	}
+}
+
+7.一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。
+
+8.接口的多继承：
+public interface Hockey extends Sports, Event
+
+9.标记接口：
+没有任何方法的接口被称为标记接口。
+标记接口是没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。
+例子：
+package java.util;
+public interface EventListener
+{}

@@ -1,0 +1,19 @@
+1.int a = 5000;
+float b = 13.65f;
+byte c = 0x4a;
+然而，在实际开发过程中，我们经常会遇到需要使用对象，而不是内置数据类型的情形。为了解决这个
+问题，Java 语言为每一个内置数据类型提供了对应的包装类。
+所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类 Number 的子类。
+
+2.例子
+package java01;
+public class HelloWorld {
+	public static void main(String[] args) {
+		Integer x = 5;
+		x = x + 10;
+		System.out.println(x);
+	}
+}
+当 x 被赋为整型值时，由于x是一个对象，所以编译器要对x进行装箱。然后，为了使x能进行加运算，所以要对x进行拆箱。
+
+

@@ -1,0 +1,27 @@
+1.例子
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		SimpleDateFormat ftDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Date d = new Date();
+		System.out.println(d.getTime());
+		System.out.println(ftDateFormat.format(d));
+	}
+}
+
+2.sleep
+public class HelloWorld {
+	public static void main(String[] args) {
+		try {
+			System.out.println(1);
+			Thread.sleep(3000);
+			System.out.println(2);
+		} catch (Exception e) {
+			System.out.println("exception");
+		}
+	}
+}
+
+3.

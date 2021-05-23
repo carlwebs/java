@@ -1,0 +1,30 @@
+1.public class HelloWorld {
+	char a = 'a';
+	String b = "a";
+	
+	public static void main(String[] args) {
+        //不可以直接这么使用，因为变量a是实例对象的属性。
+        //这里main方法用了static修饰，相当于是类的方法，不可以访问实例属性。
+	    System.out.println(a);  
+        这种是正确的：
+        HelloWorld h = new HelloWorld();
+        System.out.println(h.a);  
+        不同类型比较直接报错。
+        System.out.println(h.a == h.b);  
+	}
+}
+
+2.特殊的for循环
+package java01;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		int [] numbers = {1,2,3}; //定义数组
+		for(int n: numbers) {
+			System.out.println(n);
+		}
+		
+	}
+}
+
+3.方法重载：方法名相同，参数个数或者类型不同。
